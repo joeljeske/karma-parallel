@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/karma-parallel.svg?style=flat-square)](https://www.npmjs.com/package/karma-parallel)
 [![npm downloads](https://img.shields.io/npm/dm/karma-parallel.svg?style=flat-square)](https://www.npmjs.com/package/karma-parallel)
+[![Build Status](https://travis-ci.org/joeljeske/karma-parallel.svg?branch=master)](https://travis-ci.org/joeljeske/karma-parallel)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/joeljeske/karma-parallel)
 [![dependencies Status](https://david-dm.org/joeljeske/karma-parallel/status.svg)](https://david-dm.org/joeljeske/karma-parallel)
 [![devDependencies Status](https://david-dm.org/joeljeske/karma-parallel/dev-status.svg)](https://david-dm.org/joeljeske/karma-parallel?type=dev)
