@@ -54,5 +54,5 @@
     "lint": "eslint --fix --config .eslintrc.json lib/\\*.js test/\\*.js index.js",
     "test": "npm run lint && npm run karma"
   },
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
