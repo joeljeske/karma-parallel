@@ -1,0 +1,58 @@
+{
+  "bugs": {
+    "url": "https://github.com/joeljeske/karma-parallel/issues"
+  },
+  "contributors": [
+    {
+      "name": "Joel Jeske",
+      "url": "https://github.com/joeljeske"
+    }
+  ],
+  "dependencies": {},
+  "description": "A Karma JS Framework to support sharding tests to run in parallel across multiple browsers",
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-plugin-security": "^1.4.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0"
+  },
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://github.com/joeljeske/karma-parallel#readme",
+  "keywords": [
+    "karma",
+    "karma-parllel",
+    "karma-sharding",
+    "karma-plugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "Joel Jeske",
+      "url": "https://github.com/joeljeske"
+    }
+  ],
+  "name": "karma-parallel",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeljeske/karma-parallel.git"
+  },
+  "scripts": {
+    "karma": "karma start",
+    "lint": "eslint --fix --config .eslintrc.json lib/\\*.js test/\\*.js index.js",
+    "test": "npm run lint && npm run karma"
+  },
+  "version": "1.0.0"
+}
