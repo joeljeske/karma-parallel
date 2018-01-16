@@ -6,8 +6,7 @@
 [![dependencies Status](https://david-dm.org/joeljeske/karma-parallel/status.svg)](https://david-dm.org/joeljeske/karma-parallel)
 [![devDependencies Status](https://david-dm.org/joeljeske/karma-parallel/dev-status.svg)](https://david-dm.org/joeljeske/karma-parallel?type=dev)
 
-> A Karma JS Framework to support sharding tests to run in parallel across multiple browsers Edit
-Add topics
+> A Karma JS plugin to support sharding tests to run in parallel across multiple browsers.
 
 # Overview
 
@@ -19,11 +18,18 @@ This leads to a way to split up unit tests across multiple browsers without chan
 
 ## Installation
 
-The easiest way is to install `karma-parallel` as a `devDependency`,
-by running
+The easiest way is to install `karma-parallel` as a `devDependency`.
+
+**Using NPM**
 
 ```bash
-npm install karma karma-parallel --save-dev
+npm install karma-parallel --save-dev
+```
+
+**Using Yarn**
+
+```bash
+yarn add karma-parallel --dev
 ```
 
 
@@ -39,11 +45,30 @@ module.exports = function(config) {
     frameworks: ['mocha' /* or 'jasmine' */, 'parallel'], // this will load the framework and beforeMiddleware
     
     parallelOptions: {
-      executors: 4
+      executors: 4,
+      shardStrategy: 'round-robin' /* or 'description-length' */
     }
   });
 };
 ```
+
+
+## Options
+
+`parallelOptions [object]`: Options for this plugin
+
+`parallelOptions.executors [int=cpu_cores-1]`: The number of browser instances to
+use to test. If you test on multiple types of browsers, this spin up the number of 
+executors for each browser type. 
+
+`parallelOptions.shardStyle [string='round-robin']`: This plugin works by 
+overriding the test suite `describe()` function. When it encounters a describe, it 
+must decide if it will skip the tests inside of it, or not. 
+
+* The `round-robin` style will only take every `executors` test suite and skip the ones in between.
+* The `description-length` deterministically checks the length of the description for each test suite use a modulo of the number of executors. 
+
+
 
 ----
 
