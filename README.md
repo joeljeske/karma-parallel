@@ -71,6 +71,16 @@ must decide if it will skip the tests inside of it, or not.
 * The `description-length` deterministically checks the length of the description for each test suite use a modulo of the number of executors. 
 
 
+## Important Notes
+
+**Why are there extra tests in my output?**
+
+If this plugin discovers that you have focused some tests (fit, it.only, etc...) in other browser instances, it will add an extra focused test in the current browser instance to limit the running of the tests in the given browser. Similarly, when dividing up the tests, if there are not enough tests for a given browser, it will add an extra test to prevent karma from failing due to no running tests. 
+
+**What about code coverage?**
+
+Currently, code-coverage reports are not supported, although soon they will be. Stay tuned (or make a PR)!
+
 
 ----
 
