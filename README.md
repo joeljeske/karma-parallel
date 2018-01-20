@@ -42,12 +42,13 @@ yarn add karma-parallel --dev
 // karma.conf.js
 module.exports = function(config) {
   config.set({
-
-    frameworks: ['mocha' /* or 'jasmine' */, 'parallel'], // this will load the framework and beforeMiddleware
+    // NOTE: 'parallel' must be the first framework in the list
+    frameworks: ['parallel', 'mocha' /* or 'jasmine' */, ],
     
     parallelOptions: {
-      executors: 4,
-      shardStrategy: 'round-robin' /* or 'description-length' */
+      executors: 4, // Defaults to cpu-count - 1
+      shardStrategy: 'round-robin'
+      // shardStrategy: 'description-length'  
     }
   });
 };
