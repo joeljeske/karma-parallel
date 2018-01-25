@@ -43,7 +43,7 @@ yarn add karma-parallel --dev
 module.exports = function(config) {
   config.set({
     // NOTE: 'parallel' must be the first framework in the list
-    frameworks: ['parallel', 'mocha' /* or 'jasmine' */, ],
+    frameworks: ['parallel', 'mocha' /* or 'jasmine' */],
     
     parallelOptions: {
       executors: 4, // Defaults to cpu-count - 1
