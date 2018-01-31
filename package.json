@@ -8,7 +8,9 @@
       "url": "https://github.com/joeljeske"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "istanbul": "^0.4.5"
+  },
   "description": "A Karma JS Framework to support sharding tests to run in parallel across multiple browsers",
   "devDependencies": {
     "eslint": "^4.9.0",
