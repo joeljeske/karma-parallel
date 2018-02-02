@@ -14,6 +14,7 @@ module.exports = function(config) {
     plugins: [
       'karma-chrome-launcher',
       'karma-jasmine',
+      'karma-coverage',
       require('.')
     ],
 
@@ -36,13 +37,24 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
     parallelOptions: {
         executors: 4,
         shardStrategy: 'round-robin'
     },
 
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'test/**/*.js': ['coverage'] // coverage is loaded from karma-coverage by karma-sharding
+    },
+    // optionally, configure the reporter
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     // web server port
     port: 9876,

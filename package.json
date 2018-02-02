@@ -8,7 +8,9 @@
       "url": "https://github.com/joeljeske"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "istanbul": "^0.4.5"
+  },
   "description": "A Karma JS Framework to support sharding tests to run in parallel across multiple browsers",
   "devDependencies": {
     "eslint": "^4.9.0",
@@ -16,6 +18,7 @@
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "1.1.1",
     "karma-jasmine": "^1.1.0"
   },
   "directories": {
@@ -28,7 +31,7 @@
   "homepage": "https://github.com/joeljeske/karma-parallel#readme",
   "keywords": [
     "karma",
-    "karma-parllel",
+    "karma-parallel",
     "karma-sharding",
     "karma-plugin"
   ],
