@@ -9,7 +9,8 @@
     }
   ],
   "dependencies": {
-    "istanbul": "^0.4.5"
+    "istanbul": "^0.4.5",
+    "lodash": "^4.17.5"
   },
   "description": "A Karma JS Framework to support sharding tests to run in parallel across multiple browsers",
   "devDependencies": {
