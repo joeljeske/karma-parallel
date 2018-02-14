@@ -70,9 +70,8 @@ must decide if it will skip the tests inside of it, or not.
 * The `round-robin` style will only take every `executors` test suite and skip the ones in between.
 * The `description-length` deterministically checks the length of the description for each test suite use a modulo of the number of executors.
 
-`parallelOptions.aggregatedReporterTest [(reporter)=>boolean|regex=/coverage|istanbul/i]`: This is an
-optional regex or function used to determine if a reporter needs to only received aggregated events from the browser shards. It is used to ensure coverage reporting is accurate
-amongst all the shards of a browser. Set to null to disable aggregated reporting.
+`parallelOptions.aggregatedReporterTest [(reporter)=>boolean|regex=/coverage|istanbul|junit/i]`: This is an
+optional regex or function used to determine if a reporter needs to only received aggregated events from the browser shards. It is used to ensure coverage reporting is accurate amongst all the shards of a browser. It is also useful for some programatic reporters such as junit reporters that need to operate on a single set of test outputs and not once for each shard. Set to null to disable aggregated reporting.
 
 
 ## Important Notes
