@@ -1,7 +1,7 @@
-describe('set three', function() {
-  describe('first subject', function() {
+describe('set one', function() {
+  (describe.only || fdescribe)('first subject', function() {
     it('has a test', function() {
-      FakeNews.setThree();
+      FakeNews.setOne();
 
       expect(true);
     });
@@ -17,7 +17,7 @@ describe('set three', function() {
       expect(true);
     });
   });
-  (describe.skip || xdescribe)('third subject', function() {
+  describe('third subject', function() {
     it('has a test', function() {
       expect(true);
     });
