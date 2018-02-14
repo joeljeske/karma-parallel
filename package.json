@@ -25,6 +25,7 @@
     "karma-coverage": "^1.1.1",
     "karma-coverage-istanbul-reporter": "^1.4.1",
     "karma-jasmine": "^1.1.1",
+    "karma-junit-reporter": "^1.2.0",
     "karma-mocha": "^1.3.0",
     "mocha": "^5.0.1",
     "npm-run-all": "^4.1.2"
@@ -62,10 +63,12 @@
   },
   "scripts": {
     "karma:jasmine": "karma start karma-confs/jasmine.conf.js",
+    "karma:jasmine-junit": "karma start karma-confs/jasmine-junit.conf.js",
     "karma:jasmine-focused": "karma start karma-confs/jasmine-focused.conf.js",
     "karma:jasmine-coverage": "karma start karma-confs/jasmine-coverage.conf.js",
     "karma:jasmine-istanbul-coverage": "karma start karma-confs/jasmine-istanbul-coverage.conf.js",
     "karma:mocha": "karma start karma-confs/mocha.conf.js",
+    "karma:mocha-junit": "karma start karma-confs/mocha-junit.conf.js",
     "karma:mocha-focused": "karma start karma-confs/mocha-focused.conf.js",
     "karma:mocha-coverage": "karma start karma-confs/mocha-coverage.conf.js",
     "karma:mocha-istanbul-coverage": "karma start karma-confs/mocha-istanbul-coverage.conf.js",
