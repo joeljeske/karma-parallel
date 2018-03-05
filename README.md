@@ -61,7 +61,8 @@ module.exports = function(config) {
 
 `parallelOptions.executors [int=cpu_cores-1]`: The number of browser instances to
 use to test. If you test on multiple types of browsers, this spin up the number of
-executors for each browser type.
+executors for each browser type. If you supply a value greater than `cpu_cores-1`,
+it will default back to `cpu_cores-1`.
 
 `parallelOptions.shardStyle [string='round-robin']`: This plugin works by
 overriding the test suite `describe()` function. When it encounters a describe, it
