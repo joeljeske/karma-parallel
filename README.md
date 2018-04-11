@@ -80,6 +80,16 @@ optional regex or function used to determine if a reporter needs to only receive
 
 If this plugin discovers that you have focused some tests (fit, it.only, etc...) in other browser instances, it will add an extra focused test in the current browser instance to limit the running of the tests in the given browser. Similarly, when dividing up the tests, if there are not enough tests for a given browser, it will add an extra test to prevent karma from failing due to no running tests.
 
+**Run Some Tests in Every Browser**
+
+If you want to run some tests in every browser instance, add the string `[always]` at the beginning of the top-level describe block that contains those tests. Example:
+
+```
+describe('[always] A suite that runs on every shard', function() {
+    // Define it() blocks here
+});
+```
+
 **Code Coverage**
 
 Code coverage support is acheived by aggregating the code coverage reports from each browser into a single coverage report. We accomplish this by wrapping the coverage reporters with an aggregate reporter. By default, we only wrap reporters that pass the test `parallelOptions.aggregatedReporterTest`. It should all *just work*.
