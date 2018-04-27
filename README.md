@@ -63,7 +63,7 @@ module.exports = function(config) {
 use to test. If you test on multiple types of browsers, this spin up the number of
 executors for each browser type.
 
-`parallelOptions.shardStyle [string='round-robin']`: This plugin works by
+`parallelOptions.shardStrategy [string='round-robin']`: This plugin works by
 overriding the test suite `describe()` function. When it encounters a describe, it
 must decide if it will skip the tests inside of it, or not.
 
