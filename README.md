@@ -44,7 +44,11 @@ module.exports = function(config) {
   config.set({
     // NOTE: 'parallel' must be the first framework in the list
     frameworks: ['parallel', 'mocha' /* or 'jasmine' */],
-
+    plugins: [
+        require('karma-parallel'),
+        require('karma-jasmine'),
+        ...
+    ],
     parallelOptions: {
       executors: 4, // Defaults to cpu-count - 1
       shardStrategy: 'round-robin'
