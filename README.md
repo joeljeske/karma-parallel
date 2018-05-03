@@ -45,8 +45,8 @@ module.exports = function(config) {
     // NOTE: 'parallel' must be the first framework in the list
     frameworks: ['parallel', 'mocha' /* or 'jasmine' */],
     plugins: [
+        // add karma-parallel to the plugins if you encounter something like "karma parallel No provider for framework:parallel"
         require('karma-parallel'),
-        require('karma-jasmine'),
         ...
     ],
     parallelOptions: {
