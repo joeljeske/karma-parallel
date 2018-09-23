@@ -36,7 +36,19 @@ yarn add karma-parallel --dev
 
 ## Examples
 
-### Basic
+### Basic Installation
+
+```javascript
+// karma.conf.js
+module.exports = function(config) {
+  config.set({
+    // NOTE: 'parallel' must be the first framework in the list
+    frameworks: ['parallel', 'mocha' /* or 'jasmine' */],
+  });
+};
+```
+
+### Additional Configuration
 
 ```javascript
 // karma.conf.js
@@ -115,7 +127,7 @@ Pros:
 Cons:
 
 * Requires the spec files to reside in separate files, meaning it is not compatible with bundlers such
-as [`karma-webpack`](https://github.com/webpack-contrib/karma-webpack) or [`karma-browserify`](https://github.com/nikku/karma-browserify)
+as [`karma-webpack`](https://github.com/webpack-contrib/karma-webpack) or [`karma-browserify`](https://github.com/nikku/karma-browserify) as used with most front end cli projects (e.g. @angular/cli)
 
 
 
