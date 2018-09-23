@@ -77,7 +77,7 @@
     "karma:mocha-istanbul-coverage": "karma start karma-confs/mocha-istanbul-coverage.conf.js",
     "karma": "run-p --aggregate-output karma:*",
     "lint": "eslint --fix --config .eslintrc.json lib/\\*.js test/\\*.js index.js",
-    "test": "npm run lint && npm run karma"
+    "test": "run-p --aggregate-output lint karma"
   },
   "version": "0.2.9"
 }
