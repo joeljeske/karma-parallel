@@ -81,5 +81,5 @@
     "lint": "eslint --fix --config .eslintrc.json lib/\\*.js test/\\*.js index.js",
     "test": "run-p --aggregate-output lint karma"
   },
-  "version": "0.3.0"
+  "version": "0.3.1"
 }
