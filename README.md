@@ -65,6 +65,14 @@ module.exports = function(config) {
       executors: 4, // Defaults to cpu-count - 1
       shardStrategy: 'round-robin'
       // shardStrategy: 'description-length'
+      // shardStrategy: 'custom'
+      // customShardStrategy: function(config) {
+      //   config.executors // number, the executors set above
+      //   config.shardIndex // number, the specific index for the shard currently running
+      //   config.description // string, the name of the top-level describe string. Useful //     for determining how to shard the current specs
+      //   return config.
+      // }
+      }
     }
   });
 };
@@ -85,9 +93,10 @@ must decide if it will skip the tests inside of it, or not.
 
 * The `round-robin` style will only take every `executors` test suite and skip the ones in between.
 * The `description-length` deterministically checks the length of the description for each test suite use a modulo of the number of executors.
+* The `custom` allows you to use a custom function that will determine if a describe block should run in the current executor. It is a function that is serialized and re-constructed on each executor. The function will be called for every top level describe block and should return true if the describe block should run for a the current executor. The function is called with an object containing 3 properties; `executors` the total number of executors, `shardIndex` the 0-based index of the current executor, and the `description` the string passed to the describe block (useful for gaining context of the current description). You can create complex and custom behaviors for grouping specs together based on your needs. Note: multiple instances function of this function will exist; one for each spec, this means you cannot rely on a global state inside this function. Note: this function is serialized and re-created. This means you cannot use **any** closure variables. You must only reference parameters to this function (or globals that you may have setup outside of karma-parallel in your spec files.)
 
 `parallelOptions.aggregatedReporterTest [(reporter)=>boolean|regex=/coverage|istanbul|junit/i]`: This is an
-optional regex or function used to determine if a reporter needs to only received aggregated events from the browser shards. It is used to ensure coverage reporting is accurate amongst all the shards of a browser. It is also useful for some programatic reporters such as junit reporters that need to operate on a single set of test outputs and not once for each shard. Set to null to disable aggregated reporting.
+optional regex or function used to determine if a reporter needs to only received aggregated events from the browser shards. It is used to ensure coverage reporting is accurate amongst all the shards of a browser. It is also useful for some programmatic reporters such as junit reporters that need to operate on a single set of test outputs and not once for each shard. Set to null to disable aggregated reporting.
 
 
 ## Important Notes
