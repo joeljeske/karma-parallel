@@ -4,14 +4,16 @@
     "commonjs": true,
     "es6": true,
     "node": true,
-    "jasmine": true
+    "jasmine": true,
+    "mocha": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:security/recommended"
   ],
   "globals": {
-    "FakeNews": true
+    "FakeNews": true,
+    "GlobalConditions": true
   },
   "plugins": [
     "security"
